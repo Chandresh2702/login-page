@@ -37,7 +37,12 @@ class MyApp extends StatelessWidget {
                     padding: EdgeInsets.fromLTRB(20, 110, 0, 0),
                     child: Text('WELCOME TO',
                       style: TextStyle(
+                        fontFamily: 'Game',
+                        color: Colors.blueAccent,
+                        letterSpacing: 2.0,
                         fontSize: 40.0,fontWeight: FontWeight.bold,
+                        fontStyle: FontStyle.italic,
+
                       ),
                     ),
                   ),
@@ -45,12 +50,13 @@ class MyApp extends StatelessWidget {
                     padding: EdgeInsets.fromLTRB(20, 160, 0, 0),
                     child: Text('E-XCHANGE',
                       style: TextStyle(
-                        color: Colors.red,
-                        decoration: TextDecoration.underline,
+                        fontFamily: 'Game',
+                        color: Colors.greenAccent,
+                        letterSpacing: 2.0,
                         fontSize: 40.0,fontWeight: FontWeight.bold,
                       ),
                     ),
-                  ),
+                  )
                   
               ],),
             ),
@@ -76,19 +82,20 @@ class MyApp extends StatelessWidget {
                         fontFamily: 'Montserrat',
                         fontWeight: FontWeight.bold,
                         color: Colors.grey
-                      ) 
+                      )
                     ),
                     obscureText: true,
                   ),
                   Container(
                     alignment: Alignment(1,0),
-                    padding: EdgeInsets.only(top:15.0),
+                    padding: EdgeInsets.only(top:20.0),
                     child: InkWell(
                       child: Text('Forgort Password',
                         style: TextStyle(
+                          fontSize: 15,
                           color: Colors.green,
                           fontWeight: FontWeight.bold,
-                          decoration: TextDecoration.underline,
+                          letterSpacing: 1,
                         ),
                       ),
                     ),
@@ -97,9 +104,12 @@ class MyApp extends StatelessWidget {
                   Container(
                     child: Row(
                       children: <Widget>[
-                        SizedBox(width: 20),
+                        SizedBox(width: 0),
                         Text('SIGN IN',
                           style: TextStyle(
+                          color: Colors.lightBlueAccent,
+                          fontFamily: 'Game',
+                          letterSpacing: 2.0,
                           fontSize: 25,
                           fontWeight: FontWeight.bold,
                           ),
@@ -107,13 +117,13 @@ class MyApp extends StatelessWidget {
                         SizedBox(width: 195),
                         Ink(
                           decoration: const ShapeDecoration(
-                            color: Colors.lightBlue,
+                            color: Colors.greenAccent,
                             shape: CircleBorder(),
                           ),
                           child: IconButton(
                             icon: Icon(
-                              Icons.arrow_right,
-                              size: 40,
+                              Icons.arrow_forward,
+                              color: Colors.blueAccent,
                             ),
                             color: Colors.white,
                             onPressed: () {},
@@ -131,11 +141,17 @@ class MyApp extends StatelessWidget {
               padding: const EdgeInsets.fromLTRB(30,100,0,0),
               child: Text(
                 'New to E-xchange ?',
+                style: TextStyle(
+                  fontFamily: 'Game',
+                  color: Colors.redAccent,
+                  letterSpacing: 2.0,
+
+                ),
               ),
             ),
-            SizedBox(width: 5.0),
+            SizedBox(width: 0.0),
             Padding(
-              padding: const EdgeInsets.fromLTRB(35, 10, 0, 0),
+              padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
               child: InkWell(
                 onTap: () {
                   Navigator.of(context).pushNamed('/signup');
@@ -143,7 +159,9 @@ class MyApp extends StatelessWidget {
                 child: Text(
                   'SIGN UP',
                   style: TextStyle(
-                      // color: Colors.green,
+                      fontFamily: 'Game',
+                      color: Colors.greenAccent,
+                      letterSpacing: 2.0,
                       fontSize: 25,
                       fontWeight: FontWeight.bold,
                       decoration: TextDecoration.underline),
