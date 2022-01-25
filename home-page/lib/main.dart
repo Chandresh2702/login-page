@@ -4,6 +4,7 @@ import 'package:exchange/screens/home.dart';
 import 'package:exchange/screens/chat.dart';
 import 'package:exchange/screens/myadds.dart';
 import 'package:exchange/screens/profile.dart';
+import 'package:exchange/screens/add_productpage.dart';
 
 // void main() {
 //   runApp(MaterialApp(
@@ -53,7 +54,12 @@ class _DashBoardState extends State<DashBoard> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.deepPurple,
         child: Icon(Icons.add),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => AddProduct()),
+          );
+        },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
@@ -152,7 +158,7 @@ class _DashBoardState extends State<DashBoard> {
                     minWidth: 40,
                     onPressed: (){
                       setState(() {
-                        currentScreen = Profile();
+                        currentScreen = profile();
                         currentTab = 3;
                       });
                     },
