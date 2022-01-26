@@ -1,2 +1,1 @@
-# login-page
-here we are creating test login 
+# use git pull to avoid conflicts
