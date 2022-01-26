@@ -114,7 +114,7 @@ class MyApp extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                           ),
                         ),
-                        SizedBox(width: 195),
+                        SizedBox(width: 145),
                         Ink(
                           decoration: const ShapeDecoration(
                             color: Colors.greenAccent,
