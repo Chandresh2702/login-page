@@ -25,7 +25,7 @@ class _HomeState extends State<Home> {
             snap: false,
             centerTitle: false,
             backgroundColor: Colors.deepPurple,
-            title: Text('OLX'),
+            title: Text('E-xchange'),
             actions: [
               IconButton(
                 icon: Icon(Icons.shopping_cart),
