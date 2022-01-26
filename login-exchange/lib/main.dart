@@ -1,177 +1,127 @@
 
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'login.dart';
+import 'signup.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: HomePage(),
+  ));
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      // routes: <String, WidgetBuilder>{
-      //   '/Signup':(BuildContext context) => new SignupPage()
-      // },
-      home: Scaffold(
-        resizeToAvoidBottomInset: false,
-        // floatingActionButton: FloatingActionButton(
-        //   onPressed: () {
-        //     // Add your onPressed code here!
-        //   },
-        //   backgroundColor: Colors.green,
-        //   child: const Icon(Icons.arrow_right,
-        //     size: 30,
-        //   ),
-        // ),
-        // floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            
-            Container(
-              child: Stack(
-                children: <Widget>[
-                  Container(
-                    padding: EdgeInsets.fromLTRB(20, 110, 0, 0),
-                    child: Text('WELCOME TO',
-                      style: TextStyle(
-                        fontFamily: 'Game',
-                        color: Colors.blueAccent,
-                        letterSpacing: 2.0,
-                        fontSize: 40.0,fontWeight: FontWeight.bold,
-                        fontStyle: FontStyle.italic,
+    return Scaffold(
+      body: SafeArea(
+        child: Container(
+          // we will give media query height
+          // double.infinity make it big as my parent allows
+          // while MediaQuery make it big as per the screen
 
-                      ),
-                    ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.fromLTRB(20, 160, 0, 0),
-                    child: Text('E-XCHANGE',
-                      style: TextStyle(
-                        fontFamily: 'Game',
-                        color: Colors.greenAccent,
-                        letterSpacing: 2.0,
-                        fontSize: 40.0,fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  )
-                  
-              ],),
-            ),
-            Container(
-              padding: EdgeInsets.only(left:20, top:85, right:20),
-              child: Column(
+          width: double.infinity,
+          height: MediaQuery.of(context).size.height,
+          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 50),
+          child: Column(
+            // even space distribution
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Column(
                 children: <Widget>[
-                  TextField(
-                    decoration: InputDecoration(
-                      labelText: 'EMAIL',
-                      labelStyle: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.bold,
-                        color: Colors.grey
-                      ) 
+                  Text(
+                    "Welcome",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 30,
+
                     ),
+                    
                   ),
-                  SizedBox(height:14),
-                  TextField(
-                    decoration: InputDecoration(
-                      labelText: 'PASSWORD',
-                      labelStyle: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.bold,
-                        color: Colors.grey
-                      )
-                    ),
-                    obscureText: true,
+                  SizedBox(
+                    height: 20,
                   ),
-                  Container(
-                    alignment: Alignment(1,0),
-                    padding: EdgeInsets.only(top:20.0),
-                    child: InkWell(
-                      child: Text('Forgort Password',
-                        style: TextStyle(
-                          fontSize: 15,
-                          color: Colors.green,
-                          fontWeight: FontWeight.bold,
-                          letterSpacing: 1,
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 40),
-                  Container(
-                    child: Row(
-                      children: <Widget>[
-                        SizedBox(width: 0),
-                        Text('SIGN IN',
-                          style: TextStyle(
-                          color: Colors.lightBlueAccent,
-                          fontFamily: 'Game',
-                          letterSpacing: 2.0,
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        SizedBox(width: 145),
-                        Ink(
-                          decoration: const ShapeDecoration(
-                            color: Colors.greenAccent,
-                            shape: CircleBorder(),
-                          ),
-                          child: IconButton(
-                            icon: Icon(
-                              Icons.arrow_forward,
-                              color: Colors.blueAccent,
-                            ),
-                            color: Colors.white,
-                            onPressed: () {},
-                          ),
-                        ),
-                      ],
-                    ),
-                  )
+                  Text("Welcome to Exchange, App by IIT Mandi students",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.grey[700],
+                    fontSize: 15,
+
+                  ),)
                 ],
               ),
-            ),
-            SizedBox(height: 15),
-            
-            Padding(
-              padding: const EdgeInsets.fromLTRB(30,100,0,0),
-              child: Text(
-                'New to E-xchange ?',
-                style: TextStyle(
-                  fontFamily: 'Game',
-                  color: Colors.redAccent,
-                  letterSpacing: 2.0,
+              Container(
+                height: MediaQuery.of(context).size.height / 3,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage("assets/welcome.png")
+                  )
+                ),
+              ),
 
-                ),
-              ),
-            ),
-            SizedBox(width: 0.0),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
-              child: InkWell(
-                onTap: () {
-                  Navigator.of(context).pushNamed('/signup');
-                },
-                child: Text(
-                  'SIGN UP',
-                  style: TextStyle(
-                      fontFamily: 'Game',
-                      color: Colors.greenAccent,
-                      letterSpacing: 2.0,
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                      decoration: TextDecoration.underline),
-                ),
-              ),
-            )
-          ],)
+              Column(
+                children: <Widget>[
+                  // the login button
+                  MaterialButton(
+                    minWidth: double.infinity,
+                    height: 60,
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
+                    },
+                    // defining the shape
+                    color: Color(0xff0095FF),
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(
+                        color: Colors.black
+                      ),
+                      borderRadius: BorderRadius.circular(50)
+                    ),
+                    
+                    child: Text(
+                      "Login",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 18,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                  // creating the signup button
+                  SizedBox(height:20),
+                  MaterialButton(
+                    minWidth: double.infinity,
+                    height: 60,
+                    onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> SignupPage()));
+
+                    },
+                    color: Color(0xff0095FF),
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(
+                        color: Colors.black
+                      ),
+                      borderRadius: BorderRadius.circular(50)
+                    ),
+                    child: Text(
+                      "Sign up",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 18
+                      ),
+                    ),
+                  )
+
+                ],
+              )
+            ],
+          ),
+        ),
       ),
     );
   }
 }
-
 
