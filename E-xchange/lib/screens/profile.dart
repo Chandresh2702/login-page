@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'data_horizontal_list.dart';
+import 'package:e_xchange/data/data_horizontal_list.dart';
 
-class profile extends StatefulWidget {
+class Profile extends StatefulWidget {
   @override
   _State createState() => _State();
 }
 
-class _State extends State<profile> {
+class _State extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +20,7 @@ class _State extends State<profile> {
         body: Container(
           decoration: BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage('assets/background_profilePage3.jfif'),
+                  image: AssetImage('assets/images/background_profilePage3.jfif'),
                   fit: BoxFit.cover)),
           child: Padding(
               padding: const EdgeInsets.fromLTRB(10, 30, 10, 0),
@@ -28,7 +28,7 @@ class _State extends State<profile> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   CircleAvatar(
-                    backgroundImage: AssetImage('assets/dp.jpeg'),
+                    backgroundImage: AssetImage('assets/images/dp.jpeg'),
                     radius: 50.0,
                     backgroundColor: Colors.transparent,
                   ),
@@ -120,7 +120,7 @@ class _State extends State<profile> {
                           child: box_format(
                             Name: 'shoe',
                             price: '1000',
-                            image: 'assets/img1.jfif',
+                            image: 'assets/images/img1.jfif',
                           ),
                         ),
                         Container(
@@ -135,7 +135,7 @@ class _State extends State<profile> {
                           child: box_format(
                             Name: 'sport shoe',
                             price: '3600',
-                            image: 'assets/img2.jfif',
+                            image: 'assets/images/img2.jfif',
                           ),
                         ),
                         Container(
@@ -150,7 +150,7 @@ class _State extends State<profile> {
                           child: box_format(
                             Name: 'lofers',
                             price: '5000',
-                            image: 'assets/img3.jfif',
+                            image: 'assets/images/img3.jfif',
                           ),
                         ),
                         Container(
@@ -165,18 +165,9 @@ class _State extends State<profile> {
                           child: box_format(
                             Name: 'kghk',
                             price: '500',
-                            image: 'assets/image10.jpg',
+                            image: 'assets/images/image10.jpg',
                           ),
                         ),
-                        Container(
-                            width: 200.0,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              border: Border.all(
-                                color: Colors.black,
-                                width: 8,
-                              ),
-                            )),
                       ],
                     ),
                   )
