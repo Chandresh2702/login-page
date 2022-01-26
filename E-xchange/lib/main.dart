@@ -158,7 +158,7 @@ class _DashBoardState extends State<DashBoard> {
                     minWidth: 40,
                     onPressed: (){
                       setState(() {
-                        currentScreen = profile();
+                        currentScreen = Profile();
                         currentTab = 3;
                       });
                     },

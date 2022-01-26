@@ -61,9 +61,11 @@ class _AddProductState extends State<AddProduct> {
           ),
           Container(
             alignment: Alignment.bottomCenter,
-            padding: EdgeInsets.only(left: 30, top: 300, right: 20, bottom: 0),
+            padding: EdgeInsets.only(left: 30, top: 300, right: 20, bottom: 30),
             child: Row(
+
               children: <Widget>[
+
                 SizedBox(width: 0),
                 Text(
                   'ADD',
@@ -72,6 +74,7 @@ class _AddProductState extends State<AddProduct> {
                     letterSpacing: 2.0,
                     fontSize: 25,
                     fontWeight: FontWeight.bold,
+
                   ),
                 ),
                 SizedBox(width: 225),
@@ -88,7 +91,7 @@ class _AddProductState extends State<AddProduct> {
                     color: Colors.white,
                     onPressed: () {},
                   ),
-                ),
+                 ),
               ],
             ),
           )
