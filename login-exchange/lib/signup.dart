@@ -25,7 +25,7 @@ class SignupPage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 40),
+          padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
           height: MediaQuery.of(context).size.height - 50,
           width: double.infinity,
           child: Column(
@@ -99,7 +99,9 @@ class SignupPage extends StatelessWidget {
 
 
               ),
-              Row(
+              Container(
+              padding: const EdgeInsets.fromLTRB(0, 0, 0, 50),
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text("Already have an account?"),
@@ -116,6 +118,7 @@ class SignupPage extends StatelessWidget {
                     ),
                   ),
                 ],
+              ),
               )
 
 
