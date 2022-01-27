@@ -1,190 +1,124 @@
 import 'package:flutter/material.dart';
-// import 'dashboard.dart';
-import 'package:e_xchange/screens/home.dart';
-import 'package:e_xchange/screens/chat.dart';
-import 'package:e_xchange/screens/myadds.dart';
-import 'package:e_xchange/screens/profile.dart';
-import 'package:e_xchange/screens/add_productpage.dart';
-
-// void main() {
-//   runApp(MaterialApp(
-//     initialRoute: '/',
-//     routes: {
-//       '/home': (context) => Home(),
-//     },
-//     debugShowCheckedModeBanner: false,
-//   ));
-// }
+import 'package:e_xchange/screens/login.dart';
+import 'package:e_xchange/screens/signup.dart';
 
 void main() {
-  runApp(const MaterialApp(
-    home: DashBoard(),
+  runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
+    home: HomePage(),
   ));
 }
 
-class DashBoard extends StatefulWidget {
-  const DashBoard({ Key? key }) : super(key: key);
-
-  @override
-  _DashBoardState createState() => _DashBoardState();
-}
-
-class _DashBoardState extends State<DashBoard> {
-
-  int currentTab = 0;
-  final List<Widget> screens = [
-    Home(),
-    Chat(),
-    Profile(),
-    Myadds(),
-  ];
-
-  final PageStorageBucket bucket = PageStorageBucket();
-  Widget currentScreen = Home();
-
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PageStorage(
-        child: currentScreen,
-        bucket: bucket,
-      ),
-      resizeToAvoidBottomInset: false,
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.deepPurple,
-        child: Icon(Icons.add),
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => AddProduct()),
-          );
-        },
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: BottomAppBar(
-        shape: CircularNotchedRectangle(),
-        notchMargin: 10,
+      body: SafeArea(
         child: Container(
-          height: 60,
-          child: Row(
+          // we will give media query height
+          // double.infinity make it big as my parent allows
+          // while MediaQuery make it big as per the screen
+
+          width: double.infinity,
+          height: MediaQuery.of(context).size.height,
+          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 50),
+          child: Column(
+            // even space distribution
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  MaterialButton(
-                    minWidth: 40,
-                    onPressed: (){
-                      setState(() {
-                        currentScreen = Home();
-                        currentTab = 0;
-                      });
-                    },
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.home,
-                          color: currentTab ==0 ? Colors.deepPurple : Colors.grey,
-                        ),
-                        Text(
-                          'Home',
-                          style: TextStyle(
-                            color: currentTab ==0 ? Colors.deepPurple : Colors.grey,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                
-                MaterialButton(
-                    minWidth: 40,
-                    onPressed: (){
-                      setState(() {
-                        currentScreen = Chat();
-                        currentTab = 1;
-                      });
-                    },
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.chat,
-                          color: currentTab ==1 ? Colors.deepPurple : Colors.grey,
-                        ),
-                        Text(
-                          'Chat',
-                          style: TextStyle(
-                            color: currentTab ==1 ? Colors.deepPurple : Colors.grey,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+              Column(
+                children: <Widget>[
+                  Text(
+                    "Welcome",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 30,
 
+                    ),
+
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text("Welcome to Exchange, App by IIT Mandi students",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.grey[700],
+                      fontSize: 15,
+
+                    ),)
                 ],
               ),
-            // Right tab bar Icons
-            Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+              Container(
+                height: MediaQuery.of(context).size.height / 3,
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("assets/welcome.png")
+                    )
+                ),
+              ),
+
+              Column(
+                children: <Widget>[
+                  // the login button
                   MaterialButton(
-                    minWidth: 40,
-                    onPressed: (){
-                      setState(() {
-                        currentScreen = Myadds();
-                        currentTab = 2;
-                      });
+                    minWidth: double.infinity,
+                    height: 60,
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
                     },
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.favorite,
-                          color: currentTab ==2 ? Colors.deepPurple : Colors.grey,
+                    // defining the shape
+                    color: Color(0xff0095FF),
+                    shape: RoundedRectangleBorder(
+                        side: BorderSide(
+                            color: Colors.black
                         ),
-                        Text(
-                          'Wishlist',
-                          style: TextStyle(
-                            color: currentTab ==2 ? Colors.deepPurple : Colors.grey,
-                          ),
-                        ),
-                      ],
+                        borderRadius: BorderRadius.circular(50)
+                    ),
+
+                    child: Text(
+                      "Login",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 18,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
-                
-                MaterialButton(
-                    minWidth: 40,
+                  // creating the signup button
+                  SizedBox(height:20),
+                  MaterialButton(
+                    minWidth: double.infinity,
+                    height: 60,
                     onPressed: (){
-                      setState(() {
-                        currentScreen = Profile();
-                        currentTab = 3;
-                      });
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> SignupPage()));
+
                     },
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.account_circle,
-                          color: currentTab ==3 ? Colors.deepPurple : Colors.grey,
+                    color: Color(0xff0095FF),
+                    shape: RoundedRectangleBorder(
+                        side: BorderSide(
+                            color: Colors.black
                         ),
-                        Text(
-                          'Profile',
-                          style: TextStyle(
-                            color: currentTab ==3 ? Colors.deepPurple : Colors.grey,
-                          ),
-                        ),
-                      ],
+                        borderRadius: BorderRadius.circular(50)
                     ),
-                  ),
+                    child: Text(
+                      "Sign up",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 18
+                      ),
+                    ),
+                  )
 
                 ],
-              ),
+              )
             ],
           ),
-    ),
+        ),
       ),
     );
   }
 }
+
