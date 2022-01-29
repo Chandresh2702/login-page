@@ -11,6 +11,7 @@ class _AddProductState extends State<AddProduct> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       resizeToAvoidBottomInset: false,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -23,9 +24,10 @@ class _AddProductState extends State<AddProduct> {
                   child: Text(
                     'Add product',
                     style: TextStyle(
-                      color: Colors.blueAccent,
+                      color: Colors.amber,
                       letterSpacing: 2.0,
                       fontSize: 40.0,
+                      fontFamily: 'Rancho',
                       fontWeight: FontWeight.bold,
                       fontStyle: FontStyle.italic,
                     ),
@@ -39,9 +41,14 @@ class _AddProductState extends State<AddProduct> {
             child: Column(children: <Widget>[
               TextField(
                 decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+                        borderSide: const BorderSide(color:Colors.amber)
+                    ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(color:Colors.amber)
+                  ),
                     labelText: 'Name',
                     labelStyle: TextStyle(
-                        fontFamily: 'Montserrat',
                         fontWeight: FontWeight.bold,
                         color: Colors.grey)),
               ),
@@ -50,8 +57,13 @@ class _AddProductState extends State<AddProduct> {
                 keyboardType: TextInputType.multiline,
                 maxLines: null,
                 decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'product Description',
+                    enabledBorder: OutlineInputBorder(
+                        borderSide: const BorderSide(color:Colors.amber)
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                        borderSide: const BorderSide(color:Colors.amber)
+                    ),
+                    labelText: 'Product Description',
                     labelStyle: TextStyle(
                         fontFamily: 'Montserrat',
                         fontWeight: FontWeight.bold,
@@ -70,7 +82,8 @@ class _AddProductState extends State<AddProduct> {
                 Text(
                   'ADD',
                   style: TextStyle(
-                    color: Colors.lightBlueAccent,
+                    color: Colors.amber,
+                    fontFamily: 'Rancho',
                     letterSpacing: 2.0,
                     fontSize: 25,
                     fontWeight: FontWeight.bold,
@@ -80,13 +93,13 @@ class _AddProductState extends State<AddProduct> {
                 SizedBox(width: 225),
                 Ink(
                   decoration: const ShapeDecoration(
-                    color: Colors.greenAccent,
+                    color: Colors.blue,
                     shape: CircleBorder(),
                   ),
                   child: IconButton(
                     icon: Icon(
                       Icons.arrow_forward,
-                      color: Colors.blueAccent,
+                      color: Colors.amber,
                     ),
                     color: Colors.white,
                     onPressed: () {},
