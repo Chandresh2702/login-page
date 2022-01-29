@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:e_xchange/screens/product_details.dart';
 
 class SingleProductWidget extends StatefulWidget {
   final String productImage;
@@ -23,7 +24,12 @@ class _SingleProductWidgetState extends State<SingleProductWidget> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width *0.6;
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ProductInfo(productName: widget.productName)),
+          );
+      },
       child: Card(
         child: Row(
           children: <Widget>[
