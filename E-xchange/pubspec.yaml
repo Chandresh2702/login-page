@@ -91,6 +91,10 @@ flutter:
     - family: Game
       fonts:
         - asset: fonts/Game Of Squids.ttf
+    - family: Rancho
+      fonts:
+        - asset: fonts/Rancho-Regular.ttf
+            
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

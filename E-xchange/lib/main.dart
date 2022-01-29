@@ -13,6 +13,8 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
+
       body: SafeArea(
         child: Container(
           // we will give media query height
@@ -32,8 +34,10 @@ class HomePage extends StatelessWidget {
                   Text(
                     "Welcome",
                     style: TextStyle(
+                      fontFamily: 'Rancho',
                       fontWeight: FontWeight.bold,
-                      fontSize: 30,
+                      color: Colors.grey,
+                      fontSize: 40,
 
                     ),
 
@@ -44,20 +48,14 @@ class HomePage extends StatelessWidget {
                   Text("Welcome to Exchange, App by IIT Mandi students",
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      color: Colors.grey[700],
-                      fontSize: 15,
+                      fontFamily: 'Rancho',
+                      color: Colors.grey,
+                      fontSize: 20,
 
                     ),)
                 ],
               ),
-              Container(
-                height: MediaQuery.of(context).size.height / 3,
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage("assets/welcome.png")
-                    )
-                ),
-              ),
+
 
               Column(
                 children: <Widget>[
@@ -69,11 +67,8 @@ class HomePage extends StatelessWidget {
                       Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
                     },
                     // defining the shape
-                    color: Color(0xff0095FF),
+                    color: Colors.amber,
                     shape: RoundedRectangleBorder(
-                        side: BorderSide(
-                            color: Colors.black
-                        ),
                         borderRadius: BorderRadius.circular(50)
                     ),
 
@@ -81,6 +76,7 @@ class HomePage extends StatelessWidget {
                       "Login",
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
+                        fontFamily: 'Rancho',
                         fontSize: 18,
                         color: Colors.white,
                       ),
@@ -95,16 +91,14 @@ class HomePage extends StatelessWidget {
                       Navigator.push(context, MaterialPageRoute(builder: (context)=> SignupPage()));
 
                     },
-                    color: Color(0xff0095FF),
+                    color: Colors.amber,
                     shape: RoundedRectangleBorder(
-                        side: BorderSide(
-                            color: Colors.black
-                        ),
                         borderRadius: BorderRadius.circular(50)
                     ),
                     child: Text(
                       "Sign up",
                       style: TextStyle(
+                          fontFamily: 'Rancho',
                           color: Colors.white,
                           fontWeight: FontWeight.w600,
                           fontSize: 18
