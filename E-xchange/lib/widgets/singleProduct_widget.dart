@@ -31,6 +31,7 @@ class _SingleProductWidgetState extends State<SingleProductWidget> {
           );
       },
       child: Card(
+        color: Colors.black,
         child: Row(
           children: <Widget>[
             Container(
@@ -46,9 +47,9 @@ class _SingleProductWidgetState extends State<SingleProductWidget> {
                   Text(
                     widget.productName,
                     style: TextStyle(
-                      fontSize: 25,
-                      color: Colors.grey,
-                      fontWeight: FontWeight.bold,
+                      fontSize: 22,
+                      color: Colors.amber,
+                      // fontWeight: FontWeight.bold,
                     ),
                   ),
                   SizedBox(height: 10,),
@@ -58,6 +59,7 @@ class _SingleProductWidgetState extends State<SingleProductWidget> {
                       "\$ ${widget.productPrice}",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
+                        color: Colors.grey,
                       ),
                     ),
                   ),

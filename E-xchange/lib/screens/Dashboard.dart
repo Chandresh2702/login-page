@@ -6,16 +6,6 @@ import 'package:e_xchange/screens/myadds.dart';
 import 'package:e_xchange/screens/profile.dart';
 import 'package:e_xchange/screens/add_productpage.dart';
 
-// void main() {
-//   runApp(MaterialApp(
-//     initialRoute: '/',
-//     routes: {
-//       '/home': (context) => Home(),
-//     },
-//     debugShowCheckedModeBanner: false,
-//   ));
-// }
-
 
 class DashBoard extends StatefulWidget {
   const DashBoard({ Key? key }) : super(key: key);
@@ -46,8 +36,9 @@ class _DashBoardState extends State<DashBoard> {
       ),
       resizeToAvoidBottomInset: false,
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.deepPurple,
-        child: Icon(Icons.add),
+        backgroundColor: Colors.amber,
+        child: Icon(Icons.add,
+        color: Colors.black,),
         onPressed: () {
           Navigator.push(
             context,
@@ -60,6 +51,7 @@ class _DashBoardState extends State<DashBoard> {
         shape: CircularNotchedRectangle(),
         notchMargin: 10,
         child: Container(
+          color: Colors.black,
           height: 60,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -80,12 +72,12 @@ class _DashBoardState extends State<DashBoard> {
                       children: [
                         Icon(
                           Icons.home,
-                          color: currentTab ==0 ? Colors.deepPurple : Colors.grey,
+                          color: currentTab ==0 ? Colors.amber : Colors.grey,
                         ),
                         Text(
                           'Home',
                           style: TextStyle(
-                            color: currentTab ==0 ? Colors.deepPurple : Colors.grey,
+                            color: currentTab ==0 ? Colors.amber : Colors.grey,
                           ),
                         ),
                       ],
@@ -105,12 +97,12 @@ class _DashBoardState extends State<DashBoard> {
                       children: [
                         Icon(
                           Icons.chat,
-                          color: currentTab ==1 ? Colors.deepPurple : Colors.grey,
+                          color: currentTab ==1 ? Colors.amber : Colors.grey,
                         ),
                         Text(
                           'Chat',
                           style: TextStyle(
-                            color: currentTab ==1 ? Colors.deepPurple : Colors.grey,
+                            color: currentTab ==1 ? Colors.amber : Colors.grey,
                           ),
                         ),
                       ],
@@ -136,12 +128,12 @@ class _DashBoardState extends State<DashBoard> {
                       children: [
                         Icon(
                           Icons.favorite,
-                          color: currentTab ==2 ? Colors.deepPurple : Colors.grey,
+                          color: currentTab ==2 ? Colors.amber : Colors.grey,
                         ),
                         Text(
                           'Wishlist',
                           style: TextStyle(
-                            color: currentTab ==2 ? Colors.deepPurple : Colors.grey,
+                            color: currentTab ==2 ? Colors.amber : Colors.grey,
                           ),
                         ),
                       ],
@@ -161,12 +153,12 @@ class _DashBoardState extends State<DashBoard> {
                       children: [
                         Icon(
                           Icons.account_circle,
-                          color: currentTab ==3 ? Colors.deepPurple : Colors.grey,
+                          color: currentTab ==3 ? Colors.amber : Colors.grey,
                         ),
                         Text(
                           'Profile',
                           style: TextStyle(
-                            color: currentTab ==3 ? Colors.deepPurple : Colors.grey,
+                            color: currentTab ==3 ? Colors.amber : Colors.grey,
                           ),
                         ),
                       ],

@@ -16,7 +16,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: buildAppBar(),
+      backgroundColor: Colors.black,
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
@@ -24,8 +24,13 @@ class _HomeState extends State<Home> {
             pinned: true,
             snap: false,
             centerTitle: false,
-            backgroundColor: Colors.deepPurple,
-            title: Text('E-xchange'),
+            backgroundColor: Colors.black,
+                        title: Text('E-xchange',
+            style: TextStyle(
+              color: Colors.amber,
+              fontWeight: FontWeight.bold,
+              fontSize: 23,
+            )),
             actions: [
               IconButton(
                 icon: Icon(Icons.shopping_cart),
@@ -33,7 +38,7 @@ class _HomeState extends State<Home> {
               ),
             ],
             bottom: AppBar(
-              backgroundColor: Colors.deepPurple,
+              backgroundColor: Colors.black,
               title: Container(
                 width: double.infinity,
                 height: 40,
@@ -49,7 +54,7 @@ class _HomeState extends State<Home> {
                     },
                     controller: _textEditingController,
                     decoration: InputDecoration(
-                        hintText: 'Search for something',
+                        hintText: 'Search for product',
                         prefixIcon: Icon(Icons.search),
                         suffixIcon: Icon(Icons.camera_alt)),
                   ),
