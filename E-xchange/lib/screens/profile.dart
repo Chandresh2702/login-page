@@ -1,27 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:e_xchange/data/data_horizontal_list.dart';
+import "package:e_xchange/data/data_horizontal_list.dart";
 
-class Profile extends StatefulWidget {
+class profile extends StatefulWidget {
   @override
   _State createState() => _State();
 }
 
-class _State extends State<Profile> {
+class _State extends State<profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: const Text('PROFILE PAGE'),
-          titleTextStyle: const TextStyle(color: Colors.white, fontSize: 20.0),
+          titleTextStyle: const TextStyle(
+              color: Colors.amber, fontSize: 20.0, fontFamily: 'rancho'),
           centerTitle: true,
-          backgroundColor: Colors.purple[300],
+          backgroundColor: Colors.black87,
           elevation: 10.0,
         ),
         body: Container(
           decoration: BoxDecoration(
+              color: Colors.black,
               image: DecorationImage(
-                  image: AssetImage('assets/images/background_profilePage3.jfif'),
-                  fit: BoxFit.cover)),
+                image: AssetImage(
+                  'assets/images/back_img.jpg',
+                ),
+                fit: BoxFit.cover,
+              )),
           child: Padding(
               padding: const EdgeInsets.fromLTRB(10, 30, 10, 0),
               child: Column(
@@ -38,28 +43,38 @@ class _State extends State<Profile> {
                   Text(
                     'NAME:',
                     style: TextStyle(
-                        letterSpacing: 2, fontSize: 15, color: Colors.white),
+                        letterSpacing: 2,
+                        fontSize: 15,
+                        color: Colors.amber,
+                        fontFamily: 'rancho'),
                   ),
                   Text('Aryaveer Gupta',
                       style: TextStyle(
-                          fontSize: 20, letterSpacing: 2, color: Colors.white)),
+                          fontSize: 20,
+                          letterSpacing: 2,
+                          color: Colors.amber,
+                          fontFamily: 'rancho')),
                   SizedBox(height: 20),
                   // for email-id
                   Text('EMAIL-ID:',
                       style: TextStyle(
-                          letterSpacing: 2, fontSize: 15, color: Colors.white)),
+                          letterSpacing: 2,
+                          fontSize: 15,
+                          color: Colors.amber,
+                          fontFamily: 'rancho')),
                   Row(
                     children: <Widget>[
                       Icon(
                         Icons.email,
-                        color: Colors.purple[300],
+                        color: Colors.amber,
                       ),
                       Text(
                         'Guptaryaveer@gmail.com',
                         style: TextStyle(
                             fontSize: 20,
                             letterSpacing: 2,
-                            color: Colors.white),
+                            color: Colors.amber,
+                            fontFamily: 'rancho'),
                       ),
                     ],
                   ),
@@ -67,19 +82,23 @@ class _State extends State<Profile> {
                   // for phone number :
                   Text('Phone Number:',
                       style: TextStyle(
-                          letterSpacing: 2, fontSize: 15, color: Colors.white)),
+                          letterSpacing: 2,
+                          fontSize: 15,
+                          color: Colors.amber,
+                          fontFamily: 'rancho')),
                   Row(
                     children: <Widget>[
                       Icon(
                         Icons.phone,
-                        color: Colors.purple[300],
+                        color: Colors.amber,
                       ),
                       Text(
                         '8655723999',
                         style: TextStyle(
                             fontSize: 20,
                             letterSpacing: 2,
-                            color: Colors.white),
+                            color: Colors.amber,
+                            fontFamily: 'rancho'),
                       ),
                     ],
                   ),
@@ -88,18 +107,27 @@ class _State extends State<Profile> {
                   Text(
                     'Hostel Room:',
                     style: TextStyle(
-                        fontSize: 15, letterSpacing: 2, color: Colors.white),
+                        fontSize: 15,
+                        letterSpacing: 2,
+                        color: Colors.amber,
+                        fontFamily: 'rancho'),
                   ),
                   Text(
                     'H4-17',
                     style: TextStyle(
-                        fontSize: 20, letterSpacing: 2, color: Colors.white),
+                        fontSize: 20,
+                        letterSpacing: 2,
+                        color: Colors.amber,
+                        fontFamily: 'rancho'),
                   ),
                   SizedBox(height: 20),
 
                   Text(
                     'YOUR ITEMS FOR SALE: ',
-                    style: TextStyle(fontSize: 15, color: Colors.white),
+                    style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.amber,
+                        fontFamily: 'rancho'),
                   ),
                   Container(
                     height: 150,
@@ -113,7 +141,7 @@ class _State extends State<Profile> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             border: Border.all(
-                              color: Colors.black,
+                              color: Colors.white54,
                               width: 8,
                             ),
                           ),
@@ -128,7 +156,7 @@ class _State extends State<Profile> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             border: Border.all(
-                              color: Colors.black,
+                              color: Colors.white54,
                               width: 8,
                             ),
                           ),
@@ -143,7 +171,7 @@ class _State extends State<Profile> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             border: Border.all(
-                              color: Colors.black,
+                              color: Colors.white54,
                               width: 8,
                             ),
                           ),
@@ -158,7 +186,7 @@ class _State extends State<Profile> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             border: Border.all(
-                              color: Colors.black,
+                              color: Colors.white54,
                               width: 8,
                             ),
                           ),
@@ -168,6 +196,15 @@ class _State extends State<Profile> {
                             image: 'assets/images/image10.jpg',
                           ),
                         ),
+                        Container(
+                            width: 200.0,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(
+                                color: Colors.white54,
+                                width: 8,
+                              ),
+                            )),
                       ],
                     ),
                   )
