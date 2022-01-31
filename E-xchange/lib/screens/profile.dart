@@ -13,7 +13,7 @@ class _State extends State<profile> {
         appBar: AppBar(
           title: const Text('PROFILE PAGE'),
           titleTextStyle: const TextStyle(
-              color: Colors.amber, fontSize: 20.0, fontFamily: 'rancho'),
+              color: Colors.amber, fontSize: 20.0, fontFamily: 'Rancho'),
           centerTitle: true,
           backgroundColor: Colors.black87,
           elevation: 10.0,
@@ -46,14 +46,14 @@ class _State extends State<profile> {
                         letterSpacing: 2,
                         fontSize: 15,
                         color: Colors.amber,
-                        fontFamily: 'rancho'),
+                        fontFamily: 'Rancho'),
                   ),
                   Text('Aryaveer Gupta',
                       style: TextStyle(
                           fontSize: 20,
                           letterSpacing: 2,
                           color: Colors.amber,
-                          fontFamily: 'rancho')),
+                          fontFamily: 'Rancho')),
                   SizedBox(height: 20),
                   // for email-id
                   Text('EMAIL-ID:',
@@ -61,7 +61,7 @@ class _State extends State<profile> {
                           letterSpacing: 2,
                           fontSize: 15,
                           color: Colors.amber,
-                          fontFamily: 'rancho')),
+                          fontFamily: 'Rancho')),
                   Row(
                     children: <Widget>[
                       Icon(
@@ -74,7 +74,7 @@ class _State extends State<profile> {
                             fontSize: 20,
                             letterSpacing: 2,
                             color: Colors.amber,
-                            fontFamily: 'rancho'),
+                            fontFamily: 'Rancho'),
                       ),
                     ],
                   ),
@@ -85,7 +85,7 @@ class _State extends State<profile> {
                           letterSpacing: 2,
                           fontSize: 15,
                           color: Colors.amber,
-                          fontFamily: 'rancho')),
+                          fontFamily: 'Rancho')),
                   Row(
                     children: <Widget>[
                       Icon(
@@ -98,7 +98,7 @@ class _State extends State<profile> {
                             fontSize: 20,
                             letterSpacing: 2,
                             color: Colors.amber,
-                            fontFamily: 'rancho'),
+                            fontFamily: 'Rancho'),
                       ),
                     ],
                   ),
@@ -110,7 +110,7 @@ class _State extends State<profile> {
                         fontSize: 15,
                         letterSpacing: 2,
                         color: Colors.amber,
-                        fontFamily: 'rancho'),
+                        fontFamily: 'Rancho'),
                   ),
                   Text(
                     'H4-17',
@@ -118,7 +118,7 @@ class _State extends State<profile> {
                         fontSize: 20,
                         letterSpacing: 2,
                         color: Colors.amber,
-                        fontFamily: 'rancho'),
+                        fontFamily: 'Rancho'),
                   ),
                   SizedBox(height: 20),
 
@@ -127,7 +127,7 @@ class _State extends State<profile> {
                     style: TextStyle(
                         fontSize: 15,
                         color: Colors.amber,
-                        fontFamily: 'rancho'),
+                        fontFamily: 'Rancho'),
                   ),
                   Container(
                     height: 150,
@@ -152,7 +152,7 @@ class _State extends State<profile> {
                           ),
                         ),
                         Container(
-                          width: 200.0,
+                          width: 250.0,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             border: Border.all(
@@ -167,7 +167,7 @@ class _State extends State<profile> {
                           ),
                         ),
                         Container(
-                          width: 200.0,
+                          width: 250.0,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             border: Border.all(
@@ -182,7 +182,7 @@ class _State extends State<profile> {
                           ),
                         ),
                         Container(
-                          width: 200.0,
+                          width: 250.0,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             border: Border.all(
@@ -197,7 +197,7 @@ class _State extends State<profile> {
                           ),
                         ),
                         Container(
-                            width: 200.0,
+                            width: 250.0,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                               border: Border.all(
