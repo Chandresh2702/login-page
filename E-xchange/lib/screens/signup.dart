@@ -7,25 +7,12 @@ class SignupPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       resizeToAvoidBottomInset: true,
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.white,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.arrow_back_ios,
-            size: 20,
-            color: Colors.black,),
-
-
-        ),
-      ),
+      backgroundColor: Colors.black,
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+          padding: EdgeInsets.fromLTRB(20, 50, 20, 0),
           height: MediaQuery.of(context).size.height - 50,
           width: double.infinity,
           child: Column(
@@ -36,14 +23,17 @@ class SignupPage extends StatelessWidget {
                   Text("Sign up",
                   style: TextStyle(
                     fontSize: 25,
+                    fontFamily: 'Rancho',
                     fontWeight: FontWeight.bold,
+                    color: Colors.amber,
 
                   ),),
                   SizedBox(height: 20,),
                   Text("Create an account",
                     style: TextStyle(
+                        fontFamily: 'Rancho',
                         fontSize: 18,
-                        color:Colors.grey[700]),)
+                        color:Colors.grey),)
 
 
                 ],
@@ -76,7 +66,7 @@ class SignupPage extends StatelessWidget {
                   onPressed: () {
                        Navigator.push(context, MaterialPageRoute(builder: (context) => DashBoard()));
                   },
-                  color: Color(0xff0095FF),
+                  color: Colors.amber,
                   elevation: 0,
                   
                   shape: RoundedRectangleBorder(
@@ -86,6 +76,7 @@ class SignupPage extends StatelessWidget {
                   
                   child: Text(
                     "Sign up", style: TextStyle(
+                    fontFamily: 'Rancho',
                     fontWeight: FontWeight.w600,
                     fontSize: 18,
                     color: Colors.white,
@@ -104,7 +95,11 @@ class SignupPage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Text("Already have an account?"),
+                  Text("Already have an account?",
+                    style: TextStyle(
+
+                    color: Colors.grey,
+                  ),),
                   InkWell(
                     onTap: () {
                       Navigator.push(context, MaterialPageRoute(builder: (context)=> LoginPage()));
@@ -112,7 +107,10 @@ class SignupPage extends StatelessWidget {
                     child: Text(
                       'Login',
                       style: TextStyle(
-                        fontWeight: FontWeight.w600,
+                          fontFamily: 'Rancho',
+                          color: Colors.amber,
+
+                          fontWeight: FontWeight.w600,
                         fontSize: 15
                       ),
                     ),
@@ -147,9 +145,9 @@ Widget inputFile({label, obscureText = false})
       Text(
         label,
         style: TextStyle(
+            color: Colors.grey,
             fontSize: 15,
             fontWeight: FontWeight.w400,
-            color:Colors.black87
         ),
 
       ),
@@ -163,7 +161,7 @@ Widget inputFile({label, obscureText = false})
                 horizontal: 7),
             enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(
-                  color: Colors.grey
+                  color: Colors.amber
               ),
 
             ),

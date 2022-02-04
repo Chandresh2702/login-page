@@ -20,7 +20,7 @@ class _DashBoardState extends State<DashBoard> {
   final List<Widget> screens = [
     Home(),
     Chat(),
-    Profile(),
+    profile(),
     Myadds(),
   ];
 
@@ -144,7 +144,7 @@ class _DashBoardState extends State<DashBoard> {
                     minWidth: 40,
                     onPressed: (){
                       setState(() {
-                        currentScreen = Profile();
+                        currentScreen = profile();
                         currentTab = 3;
                       });
                     },

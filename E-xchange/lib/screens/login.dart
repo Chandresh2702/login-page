@@ -6,20 +6,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          elevation: 0,
-          backgroundColor: Colors.white,
-          leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: Icon(
-              Icons.arrow_back_ios,
-              size: 20,
-              color: Colors.black,
-            ),
-          ),
-        ),
+
         resizeToAvoidBottomInset: false,
         body: Container(
             decoration: BoxDecoration(
@@ -34,7 +21,7 @@ class LoginPage extends StatelessWidget {
                       Container(
                         padding: EdgeInsets.fromLTRB(20, 50, 0, 0),
                         child: Text(
-                          'WELCOME TO',
+                          'Welcome to',
                           style: TextStyle(
                             fontFamily: 'Rancho',
                             color: Colors.amber,
@@ -65,22 +52,36 @@ class LoginPage extends StatelessWidget {
                   padding: EdgeInsets.only(left: 20, top: 55, right: 20),
                   child: Column(
                     children: <Widget>[
-                      TextField(
+                      TextFormField(
+                       style: TextStyle(color: Colors.white),
                         decoration: InputDecoration(
-                            labelText: 'EMAIL',
+                          enabledBorder: OutlineInputBorder(
+                                borderSide: const BorderSide(color:Colors.blue)
+                                        ),
+                                              focusedBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(color:Colors.blue)
+                                            ),
+                            labelText: 'Email',
                             labelStyle: TextStyle(
+                                fontSize: 20,
                                 fontFamily: 'Rancho',
-                                fontWeight: FontWeight.bold,
-                                color: Colors.amber)),
+                                color: Colors.grey)),
                       ),
                       SizedBox(height: 14),
                       TextField(
+                        style: TextStyle(color: Colors.white),
                         decoration: InputDecoration(
-                            labelText: 'PASSWORD',
+                            enabledBorder: OutlineInputBorder(
+                                borderSide: const BorderSide(color:Colors.blue)
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                                borderSide: const BorderSide(color:Colors.blue)
+                            ),
+                            labelText: 'Password',
                             labelStyle: TextStyle(
+                                fontSize: 20,
                                 fontFamily: 'Rancho',
-                                fontWeight: FontWeight.bold,
-                                color: Colors.amber)),
+                                color: Colors.grey)),
                         obscureText: true,
                       ),
                       Container(
@@ -105,7 +106,7 @@ class LoginPage extends StatelessWidget {
                           children: <Widget>[
                             SizedBox(width: 0),
                             Text(
-                              'SIGN IN',
+                              'Sign In',
                               style: TextStyle(
                                 color: Colors.amber,
                                 fontFamily: 'Rancho',
@@ -114,10 +115,10 @@ class LoginPage extends StatelessWidget {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            SizedBox(width: 145),
+                            SizedBox(width: 245),
                             Ink(
-                              decoration: ShapeDecoration(
-                                color: Colors.amber,
+                              decoration: const ShapeDecoration(
+                                color: Colors.blue,
                                 shape: CircleBorder(),
                               ),
                               child: IconButton(
@@ -125,12 +126,14 @@ class LoginPage extends StatelessWidget {
                                   Icons.arrow_forward,
                                   color: Colors.amber,
                                 ),
+                                color: Colors.white,
                                 onPressed: () {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => DashBoard()));
                                 },
+
                               ),
                             ),
                           ],
@@ -162,7 +165,7 @@ class LoginPage extends StatelessWidget {
                               builder: (context) => SignupPage()));
                     },
                     child: Text(
-                      'SIGN UP',
+                      'Sign Up',
                       style: TextStyle(
                           fontFamily: 'Rancho',
                           color: Colors.amber,
