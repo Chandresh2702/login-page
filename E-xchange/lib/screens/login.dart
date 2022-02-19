@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'signup.dart';
+import 'forgot_password.dart';
 import 'package:e_xchange/screens/Dashboard.dart';
 
 class LoginPage extends StatelessWidget {
@@ -88,6 +89,12 @@ class LoginPage extends StatelessWidget {
                         alignment: Alignment(1, 0),
                         padding: EdgeInsets.only(top: 20.0),
                         child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Forgot_password()));
+                          },
                           child: Text(
                             'Forgort Password',
                             style: TextStyle(
