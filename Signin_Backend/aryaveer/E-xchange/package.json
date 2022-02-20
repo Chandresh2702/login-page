@@ -1,0 +1,23 @@
+{
+  "name": "e-xchange",
+  "version": "1.0.0",
+  "description": "A commodity loan/lending application. At times when we need something that is not easily available in shops and around college, we usually put up our requests at the noticeboard or some other official groups asking for it. At times it helps but it spams the group and many people are reluctant to even ask. This project aims to create an IIT Mandi-specific commodity exchanging app that connects lenders and borrowers.",
+  "main": "demoApi.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "express": "^4.17.2",
+    "mongoose": "^6.2.0",
+    "nodemon": "^2.0.15",
+    "validator": "^13.7.0"
+  }
+}
