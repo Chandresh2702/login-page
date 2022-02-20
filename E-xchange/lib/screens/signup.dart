@@ -4,6 +4,7 @@ import 'login.dart';
 // import 'screens/home.dart';
 
 class SignupPage extends StatelessWidget {
+  final _globalkey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,103 +29,109 @@ class SignupPage extends StatelessWidget {
           padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
           height: MediaQuery.of(context).size.height - 50,
           width: double.infinity,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              Column(
-                children: <Widget>[
-                  Text("Sign up",
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-
-                  ),),
-                  SizedBox(height: 20,),
-                  Text("Create an account",
+          child: Form(
+            key: _globalkey,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Column(
+                  children: <Widget>[
+                    Text("Sign up",
                     style: TextStyle(
-                        fontSize: 18,
-                        color:Colors.grey[700]),)
-
-
-                ],
-              ),
-              Column(
-                children: <Widget>[
-                  inputFile(label: "Username"),
-                  inputFile(label: "Email"),
-                  // inputFile(label: "Name"),
-                  inputFile(label: "Roll number"),
-                  inputFile(label: "Password", obscureText: true),
-                  inputFile(label: "Confirm Password ", obscureText: true),
-                ],
-              ),
-              Container(
-                padding: EdgeInsets.only(top: 3, left: 3),
-                decoration:
-                BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
-                    border: Border(
-                      bottom: BorderSide(color: Colors.black),
-                      top: BorderSide(color: Colors.black),
-                      left: BorderSide(color: Colors.black),
-                      right: BorderSide(color: Colors.black),
-                    )
-                ),
-                child: MaterialButton(
-                  // minWidth: double.infinity,
-                  height: 50,
-                  onPressed: () {
-                       Navigator.push(context, MaterialPageRoute(builder: (context) => DashBoard()));
-                  },
-                  color: Color(0xff0095FF),
-                  elevation: 0,
-                  
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50),
-
-                  ),
-                  
-                  child: Text(
-                    "Sign up", style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 18,
-                    color: Colors.white,
-                    
-
-                  ),
-                  ),
-
-                ),
-
-
-
-              ),
-              Container(
-              padding: const EdgeInsets.fromLTRB(0, 0, 0, 50),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text("Already have an account?"),
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=> LoginPage()));
-                    },
-                    child: Text(
-                      'Login',
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+          
+                    ),),
+                    SizedBox(height: 20,),
+                    Text("Create an account",
                       style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 15
+                          fontSize: 18,
+                          color:Colors.grey[700]),)
+          
+          
+                  ],
+                ),
+                Column(
+                  children: <Widget>[
+                    inputFile(label: "Username"),
+                    inputFile(label: "Email"),
+                    // inputFile(label: "Name"),
+                    inputFile(label: "Roll number"),
+                    inputFile(label: "Password", obscureText: true),
+                    inputFile(label: "Confirm Password ", obscureText: true),
+                  ],
+                ),
+                Container(
+                  padding: EdgeInsets.only(top: 3, left: 3),
+                  decoration:
+                  BoxDecoration(
+                      borderRadius: BorderRadius.circular(50),
+                      border: Border(
+                        bottom: BorderSide(color: Colors.black),
+                        top: BorderSide(color: Colors.black),
+                        left: BorderSide(color: Colors.black),
+                        right: BorderSide(color: Colors.black),
+                      )
+                  ),
+                  child: MaterialButton(
+                    // minWidth: double.infinity,
+                    height: 50,
+                    onPressed: () {
+                        //  Navigator.push(context, MaterialPageRoute(builder: (context) => DashBoard()));
+                        if(_globalkey.currentState!.validate()){
+                          print("Validated");
+                        }
+                    },
+                    color: Color(0xff0095FF),
+                    elevation: 0,
+                    
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50),
+          
+                    ),
+                    
+                    child: Text(
+                      "Sign up", style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 18,
+                      color: Colors.white,
+                      
+          
+                    ),
+                    ),
+          
+                  ),
+          
+          
+          
+                ),
+                Container(
+                padding: const EdgeInsets.fromLTRB(0, 0, 0, 50),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text("Already have an account?"),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> LoginPage()));
+                      },
+                      child: Text(
+                        'Login',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 15
+                        ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-              )
-
-
-
-            ],
-
+                  ],
+                ),
+                )
+          
+          
+          
+              ],
+          
+            ),
           ),
 
 
@@ -156,7 +163,12 @@ Widget inputFile({label, obscureText = false})
       SizedBox(
         height: 1,
       ),
-      TextField(
+      TextFormField(
+        validator: (value){
+          if(value!.isEmpty)
+          return "The field cannot be empty";
+          return null;
+        },
         obscureText: obscureText,
         decoration: InputDecoration(
             contentPadding: EdgeInsets.symmetric(vertical: 0,
