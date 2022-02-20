@@ -25,25 +25,25 @@ class _box_formatState extends State<box_format> {
           Text(
             'Product Name:',
             style: TextStyle(
-                color: Colors.amber, fontFamily: 'rancho', fontSize: 18),
+                color: Colors.amber, fontFamily: 'Rancho', fontSize: 18),
           ),
           SizedBox(
             width: 20,
           ),
           Text('Price:',
               style: TextStyle(
-                  color: Colors.amber, fontFamily: 'rancho', fontSize: 18))
+                  color: Colors.amber, fontFamily: 'Rancho', fontSize: 18))
         ]),
         Row(children: <Widget>[
           Text(widget.Name,
               style: TextStyle(
-                  color: Colors.amber, fontFamily: 'rancho', fontSize: 18)),
+                  color: Colors.amber, fontFamily: 'Rancho', fontSize: 18)),
           SizedBox(
             width: 80,
           ),
           Text(widget.price,
               style: TextStyle(
-                  color: Colors.amber, fontFamily: 'rancho', fontSize: 18))
+                  color: Colors.amber, fontFamily: 'Rancho', fontSize: 18))
         ]),
       ],
     );

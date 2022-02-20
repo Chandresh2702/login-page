@@ -6,21 +6,19 @@ import 'package:e_xchange/screens/myadds.dart';
 import 'package:e_xchange/screens/profile.dart';
 import 'package:e_xchange/screens/add_productpage.dart';
 
-
 class DashBoard extends StatefulWidget {
-  const DashBoard({ Key? key }) : super(key: key);
+  const DashBoard({Key? key}) : super(key: key);
 
   @override
   _DashBoardState createState() => _DashBoardState();
 }
 
 class _DashBoardState extends State<DashBoard> {
-
   int currentTab = 0;
   final List<Widget> screens = [
     Home(),
     Chat(),
-    Profile(),
+    profile(),
     Myadds(),
   ];
 
@@ -37,8 +35,10 @@ class _DashBoardState extends State<DashBoard> {
       resizeToAvoidBottomInset: false,
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.amber,
-        child: Icon(Icons.add,
-        color: Colors.black,),
+        child: Icon(
+          Icons.add,
+          color: Colors.black,
+        ),
         onPressed: () {
           Navigator.push(
             context,
@@ -61,7 +61,7 @@ class _DashBoardState extends State<DashBoard> {
                 children: [
                   MaterialButton(
                     minWidth: 40,
-                    onPressed: (){
+                    onPressed: () {
                       setState(() {
                         currentScreen = Home();
                         currentTab = 0;
@@ -72,21 +72,20 @@ class _DashBoardState extends State<DashBoard> {
                       children: [
                         Icon(
                           Icons.home,
-                          color: currentTab ==0 ? Colors.amber : Colors.grey,
+                          color: currentTab == 0 ? Colors.amber : Colors.grey,
                         ),
                         Text(
                           'Home',
                           style: TextStyle(
-                            color: currentTab ==0 ? Colors.amber : Colors.grey,
+                            color: currentTab == 0 ? Colors.amber : Colors.grey,
                           ),
                         ),
                       ],
                     ),
                   ),
-
                   MaterialButton(
                     minWidth: 40,
-                    onPressed: (){
+                    onPressed: () {
                       setState(() {
                         currentScreen = Chat();
                         currentTab = 1;
@@ -97,18 +96,17 @@ class _DashBoardState extends State<DashBoard> {
                       children: [
                         Icon(
                           Icons.chat,
-                          color: currentTab ==1 ? Colors.amber : Colors.grey,
+                          color: currentTab == 1 ? Colors.amber : Colors.grey,
                         ),
                         Text(
                           'Chat',
                           style: TextStyle(
-                            color: currentTab ==1 ? Colors.amber : Colors.grey,
+                            color: currentTab == 1 ? Colors.amber : Colors.grey,
                           ),
                         ),
                       ],
                     ),
                   ),
-
                 ],
               ),
               // Right tab bar Icons
@@ -117,7 +115,7 @@ class _DashBoardState extends State<DashBoard> {
                 children: [
                   MaterialButton(
                     minWidth: 40,
-                    onPressed: (){
+                    onPressed: () {
                       setState(() {
                         currentScreen = Myadds();
                         currentTab = 2;
@@ -128,23 +126,22 @@ class _DashBoardState extends State<DashBoard> {
                       children: [
                         Icon(
                           Icons.favorite,
-                          color: currentTab ==2 ? Colors.amber : Colors.grey,
+                          color: currentTab == 2 ? Colors.amber : Colors.grey,
                         ),
                         Text(
                           'Wishlist',
                           style: TextStyle(
-                            color: currentTab ==2 ? Colors.amber : Colors.grey,
+                            color: currentTab == 2 ? Colors.amber : Colors.grey,
                           ),
                         ),
                       ],
                     ),
                   ),
-
                   MaterialButton(
                     minWidth: 40,
-                    onPressed: (){
+                    onPressed: () {
                       setState(() {
-                        currentScreen = Profile();
+                        currentScreen = profile();
                         currentTab = 3;
                       });
                     },
@@ -153,18 +150,17 @@ class _DashBoardState extends State<DashBoard> {
                       children: [
                         Icon(
                           Icons.account_circle,
-                          color: currentTab ==3 ? Colors.amber : Colors.grey,
+                          color: currentTab == 3 ? Colors.amber : Colors.grey,
                         ),
                         Text(
                           'Profile',
                           style: TextStyle(
-                            color: currentTab ==3 ? Colors.amber : Colors.grey,
+                            color: currentTab == 3 ? Colors.amber : Colors.grey,
                           ),
                         ),
                       ],
                     ),
                   ),
-
                 ],
               ),
             ],

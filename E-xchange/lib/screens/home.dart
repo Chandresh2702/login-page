@@ -25,12 +25,12 @@ class _HomeState extends State<Home> {
             snap: false,
             centerTitle: false,
             backgroundColor: Colors.black,
-                        title: Text('E-xchange',
-            style: TextStyle(
-              color: Colors.amber,
-              fontWeight: FontWeight.bold,
-              fontSize: 23,
-            )),
+            title: Text('E-xchange',
+                style: TextStyle(
+                  color: Colors.amber,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 23,
+                )),
             actions: [
               IconButton(
                 icon: Icon(Icons.shopping_cart),
@@ -47,13 +47,16 @@ class _HomeState extends State<Home> {
                   child: TextField(
                     onChanged: (value) {
                       setState(() {
-                        ProductsDataOnSearch = ProductsData.where((element) => element.productName.toLowerCase().contains(value.toLowerCase())).toList();
+                        ProductsDataOnSearch = ProductsData.where((element) =>
+                            element.productName
+                                .toLowerCase()
+                                .contains(value.toLowerCase())).toList();
                         print(ProductsDataOnSearch);
-                        
                       });
                     },
                     controller: _textEditingController,
                     decoration: InputDecoration(
+                        border: OutlineInputBorder(),
                         hintText: 'Search for product',
                         prefixIcon: Icon(Icons.search),
                         suffixIcon: Icon(Icons.camera_alt)),
@@ -68,11 +71,15 @@ class _HomeState extends State<Home> {
               Container(
                 child: Center(
                   child: ListView.builder(
-                    itemCount:_textEditingController!.text.isNotEmpty ? ProductsDataOnSearch.length: ProductsData.length,
+                    itemCount: _textEditingController!.text.isNotEmpty
+                        ? ProductsDataOnSearch.length
+                        : ProductsData.length,
                     physics: ScrollPhysics(),
                     shrinkWrap: true,
                     itemBuilder: (context, index) {
-                      var data = _textEditingController!.text.isNotEmpty ? ProductsDataOnSearch[index] : ProductsData[index];
+                      var data = _textEditingController!.text.isNotEmpty
+                          ? ProductsDataOnSearch[index]
+                          : ProductsData[index];
                       return SingleProductWidget(
                         productImage: data.productImage,
                         productName: data.productName,
@@ -87,7 +94,6 @@ class _HomeState extends State<Home> {
           ),
         ],
       ),
-      
     );
   }
 }
